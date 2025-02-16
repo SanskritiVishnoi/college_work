@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Catalogue</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+        }
+        
+        /* Main Navbar */
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 20px;
+            background-color: #333;
+            color: white;
+            position: relative;
+        }
+        .navbar .logo {
+            width: 50px;
+            height: 50px;
+        }
+        .navbar .website-name {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* Secondary Navbar */
+        .nav-links {
+            display: flex;
+            justify-content: space-evenly;
+            background-color: #444;
+            padding: 10px 0;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+        .nav-links a:hover {
+            background-color: #555;
+        }
+
+        /* Page Layout */
+        .box {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: stretch;
+            margin: 20px;
+            height: calc(100vh - 120px);
+        }
+
+        /* Left Sidebar (Course List) */
+        .course {
+            width: 25%;
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-right: 2px solid #ccc;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+        .course a {
+            display: block;
+            padding: 20px;
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+            text-align: center;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .course a:hover {
+            background-color: #d0d0d0;
+        }
+
+        /* Catalogue Section */
+        .desc {
+            flex: 1;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        /* Book Card */
+        .book-card {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        .book-card img {
+            width: 100px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        .book-card h3 {
+            font-size: 18px;
+            margin: 5px 0;
+        }
+        .book-card p {
+            font-size: 14px;
+            margin: 3px 0;
+        }
+        .add-to-cart {
+            background-color: #28a745;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        .add-to-cart:hover {
+            background-color: #218838;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .box {
+                flex-direction: column;
+            }
+            .course {
+                width: 100%;
+                text-align: center;
+                border-right: none;
+                border-bottom: 2px solid #ccc;
+                flex-direction: row;
+                justify-content: space-around;
+            }
+            .desc {
+                width: 100%;
+            }
+            .nav-links {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main Navbar -->
+    <nav class="navbar">
+        <img src="https://www.jimsindia.org/techbyte2k19/images/logo/jims_logo.png" alt="Logo" class="logo">
+        <div class="website-name">JEMTEC Greater Noida</div>
+    </nav>
+
+    <!-- Secondary Navbar -->
+    <nav class="nav-links">
+        <a href="waste.html">Home</a>
+        <a href="Login.html">Login</a>
+        <a href="registration.html">Registration</a>
+        <a href="catalogue.html">Catalogue</a>
+        <a href="cart.html">Cart</a>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="box">
+        <!-- Left Sidebar (Courses) -->
+        <div class="course">
+            <a href="#">CSE</a>
+            <a href="#">ECE</a>
+            <a href="#">EEE</a>
+            <a href="#">CIVIL</a>
+        </div>
+
+        <!-- Catalogue Section -->
+        <div class="desc">
+            <div class="book-card">
+                <img src="https://rukminim1.flixcart.com/image/832/832/book/5/7/1/computer-networks-original-imadfv5dzuwcjywh.jpeg?q=70" alt="Networking Fundamentals">
+                <h3>Networking Fundamentals</h3>
+                <p><strong>Author:</strong> Tanenbaum</p>
+                <p><strong>Publication:</strong> Pearson</p>
+                <p><strong>Price:</strong> $55</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="book-card">
+                <img src="https://cdn2.penguin.com.au/covers/original/9781718502703.jpg" alt="Python Crash Course">
+                <h3>Python Crash Course</h3>
+                <p><strong>Author:</strong> Eric Matthes</p>
+                <p><strong>Publication:</strong> No Starch Press</p>
+                <p><strong>Price:</strong> $45</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="book-card">
+                <img src="https://m.media-amazon.com/images/I/81fhd5TgpUL._SL1500_.jpg" alt="Data Science Handbook">
+                <h3>Data Science Handbook</h3>
+                <p><strong>Author:</strong> Field Cady</p>
+                <p><strong>Publication:</strong> Wiley</p>
+                <p><strong>Price:</strong> $70</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

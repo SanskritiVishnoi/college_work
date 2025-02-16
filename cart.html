@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+        }
+        
+        /* Main Navbar */
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 20px;
+            background-color: #333;
+            color: white;
+            position: relative;
+        }
+        .navbar .logo {
+            width: 50px;
+            height: 50px;
+        }
+        .navbar .website-name {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* Secondary Navbar */
+        .nav-links {
+            display: flex;
+            justify-content: space-evenly;
+            background-color: #444;
+            padding: 10px 0;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+        .nav-links a:hover {
+            background-color: #555;
+        }
+
+        /* Page Layout */
+        .box {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: stretch;
+            margin: 20px;
+            height: calc(100vh - 120px);
+        }
+
+        /* Left Sidebar (Course List) */
+        .course {
+            width: 25%;
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-right: 2px solid #ccc;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+        .course a {
+            display: block;
+            padding: 20px;
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+            text-align: center;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .course a:hover {
+            background-color: #d0d0d0;
+        }
+
+        /* Cart Section */
+        .desc {
+            flex: 1;
+            padding: 20px;
+        }
+        .cart-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .cart-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #fff;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .cart-item img {
+            width: 80px;
+            height: auto;
+            margin-right: 15px;
+        }
+        .cart-item-details {
+            flex: 1;
+        }
+        .remove-btn {
+            background-color: #dc3545;
+            color: white;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .remove-btn:hover {
+            background-color: #c82333;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .box {
+                flex-direction: column;
+            }
+            .course {
+                width: 100%;
+                text-align: center;
+                border-right: none;
+                border-bottom: 2px solid #ccc;
+                flex-direction: row;
+                justify-content: space-around;
+            }
+            .desc {
+                width: 100%;
+            }
+            .nav-links {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main Navbar -->
+    <nav class="navbar">
+        <img src="https://www.jimsindia.org/techbyte2k19/images/logo/jims_logo.png" alt="Logo" class="logo">
+        <div class="website-name">JEMTEC Greater Noida</div>
+    </nav>
+
+    <!-- Secondary Navbar -->
+    <nav class="nav-links">
+        <a href="waste.html">Home</a>
+        <a href="Login.html">Login</a>
+        <a href="registration.html">Registration</a>
+        <a href="catalogue.html">Catalogue</a>
+        <a href="cart.html">Cart</a>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="box">
+        <!-- Left Sidebar (Courses) -->
+        <div class="course">
+            <a href="#">CSE</a>
+            <a href="#">ECE</a>
+            <a href="#">EEE</a>
+            <a href="#">CIVIL</a>
+        </div>
+
+        <!-- Cart Section -->
+        <div class="desc">
+            <div class="cart-container">
+                <h2>Your Cart</h2>
+                <div class="cart-item">
+                    <img src="https://www.ibiblio.org/xml/books/bible2/bible2e.jpg" alt="XML Bible">
+                    <div class="cart-item-details">
+                        <h3>XML Bible</h3>
+                        <p><strong>Price:</strong> $40.5</p>
+                    </div>
+                    <button class="remove-btn">Remove</button>
+                </div>
+                <div class="cart-item">
+                    <img src="http://prodimage.images-bn.com/pimages/9781801574587_p0_v1_s1200x630.jpg" alt="AI Book">
+                    <div class="cart-item-details">
+                        <h3>Artificial Intelligence</h3>
+                        <p><strong>Price:</strong> $63</p>
+                    </div>
+                    <button class="remove-btn">Remove</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

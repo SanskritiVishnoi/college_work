@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Main Navbar */
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 20px;
+            background-color: #333;
+            color: white;
+            position: relative;
+        }
+        .navbar .logo {
+            width: 50px;
+            height: 50px;
+        }
+        .navbar .website-name {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* Secondary Navbar */
+        .nav-links {
+            display: flex;
+            justify-content: space-evenly;
+            background-color: #444;
+            padding: 10px 0;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+        .nav-links a:hover {
+            background-color: #555;
+        }
+
+        /* Page Layout */
+        .box {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: stretch;
+            margin: 20px;
+            height: calc(100vh - 120px);
+        }
+
+        /* Left Sidebar (Course List) */
+        .course {
+            width: 25%;
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-right: 2px solid #ccc;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+        .course a {
+            display: block;
+            padding: 20px;
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+            text-align: center;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .course a:hover {
+            background-color: #d0d0d0;
+        }
+
+        /* Registration Form */
+        .register-box {
+            flex: 1;
+            max-width: 500px;
+            margin: auto;
+            padding: 20px;
+            background: #f4f4f4;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .register-box h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .register-box label {
+            font-weight: bold;
+        }
+        .register-box input, .register-box select, .register-box textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .register-box .gender-options, .register-box .language-options {
+            display: flex;
+            gap: 15px;
+            margin: 10px 0;
+        }
+        .register-box button {
+            width: 100%;
+            padding: 10px;
+            background: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .register-box button:hover {
+            background: #555;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .box {
+                flex-direction: column;
+            }
+            .course {
+                width: 100%;
+                text-align: center;
+                border-right: none;
+                border-bottom: 2px solid #ccc;
+                flex-direction: row;
+                justify-content: space-around;
+            }
+            .register-box {
+                width: 100%;
+            }
+            .nav-links {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main Navbar -->
+    <nav class="navbar">
+        <img src="https://www.jimsindia.org/techbyte2k19/images/logo/jims_logo.png" alt="Logo" class="logo">
+        <div class="website-name">JEMTEC Greater Noida</div>
+    </nav>
+
+    <!-- Secondary Navbar -->
+    <nav class="nav-links">
+        <a href="waste.html">Home</a>
+        <a href="Login.html">Login</a>
+        <a href="registration.html">Registration</a>
+        <a href="catalogue.html">Catalogue</a>
+        <a href="cart.html">Cart</a>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="box">
+        <!-- Left Sidebar (Courses) -->
+        <div class="course">
+            <a href="#">CSE</a>
+            <a href="#">ECE</a>
+            <a href="#">EEE</a>
+            <a href="#">CIVIL</a>
+        </div>
+        <div class="register-box">
+            <h2>Registration Form</h2>
+            <form action="#" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+
+                <label for="email">E-mail ID:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Phone Number:</label>
+                <input type="text" id="phone" name="phone" required>
+
+                <label>Sex:</label>
+                <div class="gender-options">
+                    <input type="radio" id="male" name="sex" value="male" required> <label for="male">Male</label>
+                    <input type="radio" id="female" name="sex" value="female" required> <label for="female">Female</label>
+                </div>
+
+                <label>Date of Birth:</label>
+                <div class="dob-options">
+                    <select name="dob-day" required>
+                        <option value="">Day</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                    <select name="dob-month" required>
+                        <option value="">Month</option>
+                        <option value="Jan">January</option>
+                        <option value="Feb">February</option>
+                        <option value="Mar">March</option>
+                    </select>
+                    <select name="dob-year" required>
+                        <option value="">Year</option>
+                        <option value="1990">1990</option>
+                        <option value="1991">1991</option>
+                        <option value="1992">1992</option>
+                    </select>
+                </div>
+
+                <label>Languages Known:</label>
+                <div class="language-options">
+                    <input type="checkbox" name="languages" value="English"> English
+                    <input type="checkbox" name="languages" value="Telugu"> Telugu
+                    <input type="checkbox" name="languages" value="Hindi"> Hindi
+                    <input type="checkbox" name="languages" value="Tamil"> Tamil
+                </div>
+
+                <label for="address">Address:</label>
+                <textarea id="address" name="address" rows="3"></textarea>
+
+                <button type="submit">Register</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
